@@ -49,4 +49,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var riddlerGame = [];
     riddlerGame.push(trust, mirror, lawsuit, darkness,secret,time,coffin);
 
+    var currentWord = riddlerGame[Math.floor(Math.random()*riddlerGame.length)];
+
+    
+
 });
