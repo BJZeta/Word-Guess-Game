@@ -27,30 +27,54 @@ document.addEventListener("DOMContentLoaded", function (event) {
     };
     var darkness = {
         riddle: "The more there is the less you see. What am I?",
-        riddleLetters: ["d","a","r","k","n","e","s","s"],
+        riddleLetters: ["d", "a", "r", "k", "n", "e", "s", "s"],
         riddleVal: "darkness"
     };
     var secret = {
         riddle: "If you know me, you'll want to share me. But if you share me, I'll be gone. What am I?",
-        riddleLetters: ["s","e","c","r","e","t"],
+        riddleLetters: ["s", "e", "c", "r", "e", "t"],
         riddleVal: "secret"
     };
     var time = {
         riddle: "I never stop, I control your life but without me you wouldn't go anywhere. What am I?",
-        riddleLetters: ["t","i","m","e"],
+        riddleLetters: ["t", "i", "m", "e"],
         riddleVal: "time"
     };
     var coffin = {
         riddle: "The man who invented it doesn't want it, the man who bought it doesn't need it, and the man who needs it doesn't know. What is it?",
-        riddleLetters: ["c","o","f","f","i","n"],
+        riddleLetters: ["c", "o", "f", "f", "i", "n"],
         riddleVal: "coffin"
     };
 
     var riddlerGame = [];
-    riddlerGame.push(trust, mirror, lawsuit, darkness,secret,time,coffin);
+    riddlerGame.push(trust, mirror, lawsuit, darkness, secret, time, coffin);
 
-    var currentWord = riddlerGame[Math.floor(Math.random()*riddlerGame.length)];
+    var currentWord = riddlerGame[Math.floor(Math.random() * riddlerGame.length)];
+    var riddleSection = document.getElementById("riddle");
+    riddleSection.append(currentWord.riddle);
+    var answerSection = document.getElementById("answer");
+    // answerSection.append(currentWord.riddleLetters);
+
+    for (i = 0; i < currentWord.riddleLetters.length; i++) {
+        var word = document.createElement('span');
+        word.setAttribute('class','question-mark');
+        word.textContent = currentWord.riddleLetters[i];
+        var button = document.createElement('button');
+        button.append(word);
+        button.setAttribute('class', 'btn btn-dark');
+        button.setAttribute('type', 'button');
+        answerSection.append(button);
+
+    }
+    
+
 
     
+
+
+
+
+
+
 
 });
