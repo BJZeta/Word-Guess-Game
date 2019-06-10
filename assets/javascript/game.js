@@ -12,37 +12,37 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     var trust = {
         riddle: "You can have me but cannot hold me, gain me and quickly lose me, if treated with care I can be great, and if betrayed I will break. What am I?",
-        riddleLetters: ["t", "r", "u", "s", "t"],
+        riddleLetters: ["T", "R", "U", "S", "T"],
         riddleVal: "trust",
     };
     var mirror = {
         riddle: "Hit me hard and I will crack. But you'll never stop me from staring back. What am I?",
-        riddleLetters: ["m", "i", "r", "r", "o", "r"],
+        riddleLetters: ["M", "I", "R", "R", "O", "R"],
         riddleVal: "mirror",
     };
     var lawsuit = {
         riddle: "What is it that no man wants to have but no man wants to lose?",
-        riddleLetters: ["l", "a", "w", "s", "u", "i", "t"],
+        riddleLetters: ["L", "A", "W", "S", "U", "I", "T"],
         riddleVal: "lawsuit"
     };
     var darkness = {
         riddle: "The more there is the less you see. What am I?",
-        riddleLetters: ["d", "a", "r", "k", "n", "e", "s", "s"],
+        riddleLetters: ["D", "A", "R", "K", "N", "E", "S", "S"],
         riddleVal: "darkness"
     };
     var secret = {
         riddle: "If you know me, you'll want to share me. But if you share me, I'll be gone. What am I?",
-        riddleLetters: ["s", "e", "c", "r", "e", "t"],
+        riddleLetters: ["S", "E", "C", "R", "E", "T"],
         riddleVal: "secret"
     };
     var time = {
         riddle: "I never stop, I control your life but without me you wouldn't go anywhere. What am I?",
-        riddleLetters: ["t", "i", "m", "e"],
+        riddleLetters: ["T", "I", "M", "E"],
         riddleVal: "time"
     };
     var coffin = {
         riddle: "The man who invented it doesn't want it, the man who bought it doesn't need it, and the man who needs it doesn't know. What is it?",
-        riddleLetters: ["c", "o", "f", "f", "i", "n"],
+        riddleLetters: ["C", "O", "F", "F", "I", "N"],
         riddleVal: "coffin"
     };
 
@@ -56,20 +56,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
     // answerSection.append(currentWord.riddleLetters);
 
     for (i = 0; i < currentWord.riddleLetters.length; i++) {
-        var word = document.createElement('span');
-        word.setAttribute('class','question-mark');
-        word.textContent = currentWord.riddleLetters[i];
-        var button = document.createElement('button');
-        button.append(word);
-        button.setAttribute('class', 'btn btn-dark');
-        button.setAttribute('type', 'button');
-        answerSection.append(button);
+        var letter = document.createElement('span');
+        letter.setAttribute('class', 'question-mark');
+        letter.textContent = currentWord.riddleLetters[i];
+        var rLetter = document.createElement('button');
+        rLetter.append(letter);
+        rLetter.setAttribute('class', 'btn btn-dark');
+        rLetter.setAttribute('type', 'button');
+        answerSection.append(rLetter);
+
+        var input = document.getElementsByClassName('btn-success');
+        input.onclick = function() {
+            if(this.textContent === letter.textContent) {
+                console.log("peaches");
+            }
+        }
+        
+        
 
     }
-    
 
 
-    
+
+
+
+
+
 
 
 
