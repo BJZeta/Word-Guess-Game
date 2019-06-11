@@ -65,14 +65,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
         rLetter.setAttribute('type', 'button');
         answerSection.append(rLetter);
 
-        var input = document.getElementsByClassName('btn-success');
+        var input = document.getElementById('key');
         input.onclick = function() {
-            if(this.textContent === letter.textContent) {
-                console.log("peaches");
+            if(input.textContent = rLetter.textContent) {
+                rLetter.letter.classList.remove("question-mark");
+            } else {
+                alert("wrong!");
             }
         }
-        
-        
+                
 
     }
 
